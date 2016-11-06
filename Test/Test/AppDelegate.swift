@@ -15,12 +15,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             
             if let textFilePath = Bundle.main.path(forResource: textFileName, ofType: nil) {
                 let lexer =  ProtoLexer(ANTLRFileStream(textFilePath))
+                //print("lexer:",lexer.getATN())
                 let tokens =  CommonTokenStream(lexer)
                 let parser = try ProtoParser(tokens)
-                
-                let tree = try parser.serviceName()
+                //print("parser:",parser.getATN())
+                let tree = try parser.proto()
                 let walker = ParseTreeWalker()
-                try walker.walk(HelloWalker(),tree)
+                try walker.walk(ProtoWalker(),tree)
                 
             } else {
                 print("error occur: can not open \(textFileName)")
