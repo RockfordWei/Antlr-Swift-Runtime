@@ -1,6 +1,8 @@
 
 # ANTLR v4.5.1 Swift Runtime
-Upgrage to support Xcode 7.3
+Upgrage to support Xcode 8
+
+(v4.5.1.4 for Xcode 7.3.1)
 
 (v4.5.1.2 for Xcode 7.2.1)
 

@@ -71,12 +71,12 @@ public class ArrayPredictionContext: PredictionContext {
     }
     
     override
-    final public func getParent(index: Int) -> PredictionContext? {
+    final public func getParent(_ index: Int) -> PredictionContext? {
         return parents[index]
     }
     
     override
-    final public func getReturnState(index: Int) -> Int {
+    final public func getReturnState(_ index: Int) -> Int {
         return returnStates[index]
     }
     
@@ -118,8 +118,8 @@ public class ArrayPredictionContext: PredictionContext {
     internal final func combineCommonParents() {
 
         let length = parents.count
-        let uniqueParents: HashMap<PredictionContext, PredictionContext> =
-        HashMap<PredictionContext, PredictionContext>(count: length)
+        var uniqueParents: Dictionary<PredictionContext, PredictionContext> =
+        Dictionary<PredictionContext, PredictionContext>()
         for p in 0..<length {
             if let parent: PredictionContext = parents[p] {
                 // if !uniqueParents.keys.contains(parent) {

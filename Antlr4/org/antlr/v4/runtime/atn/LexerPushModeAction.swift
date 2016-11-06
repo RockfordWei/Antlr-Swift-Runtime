@@ -40,7 +40,7 @@
  */
 
 public final class LexerPushModeAction: LexerAction, CustomStringConvertible {
-    private final var mode: Int
+    fileprivate final var mode: Int
 
     /**
      * Constructs a new {@code pushMode} action with the specified mode value.
@@ -61,11 +61,11 @@ public final class LexerPushModeAction: LexerAction, CustomStringConvertible {
 
     /**
      * {@inheritDoc}
-     * @return This method returns {@link org.antlr.v4.runtime.atn.LexerActionType#PUSH_MODE}.
+     * @return This method returns {@link org.antlr.v4.runtime.atn.LexerActionType#pushMode}.
      */
 
     public override func getActionType() -> LexerActionType {
-        return LexerActionType.PUSH_MODE
+        return LexerActionType.pushMode
     }
 
     /**
@@ -84,7 +84,7 @@ public final class LexerPushModeAction: LexerAction, CustomStringConvertible {
      * value provided by {@link #getMode}.</p>
      */
     override
-    public func execute(lexer: Lexer) {
+    public func execute(_ lexer: Lexer) {
         lexer.pushMode(mode)
     }
 

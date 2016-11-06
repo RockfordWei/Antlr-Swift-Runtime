@@ -3,7 +3,7 @@
 //  Antlr4
 //
 //  Created by janyou on 16/4/8.
-//  Copyright © 2016年 jlabs. All rights reserved.
+//  Copyright © 2016 jlabs. All rights reserved.
 //
 
 import XCTest
@@ -56,7 +56,7 @@ class HashMapTest: XCTestCase {
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }

@@ -52,19 +52,20 @@ public class LL1Analyzer {
      * @param s the ATN state
      * @return the expected symbols for each outgoing transition of {@code s}.
      */
-    public func getDecisionLookahead(s: ATNState?) throws -> [IntervalSet?]? {
+    public func getDecisionLookahead(_ s: ATNState?) throws -> [IntervalSet?]? {
 //		print("LOOK("+s.stateNumber+")");
-        if s == nil {
-            return nil
+ 
+        guard let s = s else {
+             return nil
         }
-        let length = s!.getNumberOfTransitions()
-        var look: [IntervalSet?] = [IntervalSet?](count: length, repeatedValue: nil)
+        let length = s.getNumberOfTransitions()
+        var look: [IntervalSet?] = [IntervalSet?](repeating: nil, count: length)
         //new IntervalSet[s.getNumberOfTransitions()];
         for alt in 0..<length {
             look[alt] = try IntervalSet()
             var lookBusy: Set<ATNConfig> = Set<ATNConfig>()
             let seeThruPreds: Bool = false // fail to get lookahead upon pred
-            try _LOOK(s!.transition(alt).target, nil, PredictionContext.EMPTY,
+            try _LOOK(s.transition(alt).target, nil, PredictionContext.EMPTY,
                     look[alt]!, &lookBusy, BitSet(), seeThruPreds, false)
             // Wipe out lookahead for this alternative if we found nothing
             // or we had a predicate when we !seeThruPreds
@@ -91,7 +92,7 @@ public class LL1Analyzer {
      * @return The set of tokens that can follow {@code s} in the ATN in the
      * specified {@code ctx}.
      */
-    public func LOOK(s: ATNState, _ ctx: RuleContext?) throws -> IntervalSet {
+    public func LOOK(_ s: ATNState, _ ctx: RuleContext?) throws -> IntervalSet {
         return try LOOK(s, nil, ctx)
     }
 
@@ -114,7 +115,7 @@ public class LL1Analyzer {
      * specified {@code ctx}.
      */
 
-    public func LOOK(s: ATNState, _ stopState: ATNState?, _ ctx: RuleContext?) throws -> IntervalSet {
+    public func LOOK(_ s: ATNState, _ stopState: ATNState?, _ ctx: RuleContext?) throws -> IntervalSet {
         let r: IntervalSet = try IntervalSet()
         let seeThruPreds: Bool = true // ignore preds; get all lookahead
         let lookContext: PredictionContext? = ctx != nil ? PredictionContext.fromRuleContext(s.atn!, ctx) : nil
@@ -154,11 +155,11 @@ public class LL1Analyzer {
      * outermost context is reached. This parameter has no effect if {@code ctx}
      * is {@code null}.
      */
-    internal func _LOOK(s: ATNState,
+    internal func _LOOK(_ s: ATNState,
                         _ stopState: ATNState?,
                         _ ctx: PredictionContext?,
                         _ look: IntervalSet,
-                        inout _ lookBusy: Set<ATNConfig>,
+                        _ lookBusy: inout Set<ATNConfig>,
                         _ calledRuleStack: BitSet,
                         _ seeThruPreds: Bool, _ addEOF: Bool) throws {
         // print ("_LOOK(\(s.stateNumber), ctx=\(ctx)");
@@ -178,40 +179,42 @@ public class LL1Analyzer {
 //        }
 
         if s == stopState {
-            if ctx == nil {
+            guard let ctx = ctx else {
                 try look.add(CommonToken.EPSILON)
                 return
-            } else {
-                if ctx!.isEmpty() && addEOF {
-                    try look.add(CommonToken.EOF)
-                    return
-                }
             }
+            
+            if ctx.isEmpty() && addEOF {
+                try look.add(CommonToken.EOF)
+                return
+            }
+            
         }
 
         if s is RuleStopState {
-            if ctx == nil {
-                try  look.add(CommonToken.EPSILON)
+            guard let ctx = ctx else {
+                try look.add(CommonToken.EPSILON)
                 return
-            } else {
-                if ctx!.isEmpty() && addEOF {
-                    try look.add(CommonToken.EOF)
-                    return
-                }
             }
-
+            
+            if ctx.isEmpty() && addEOF {
+                try look.add(CommonToken.EOF)
+                return
+            }
+            
+            
             if ctx != PredictionContext.EMPTY {
                 // run thru all possible stack tops in ctx
-                let length = ctx!.size()
+                let length = ctx.size()
                 for i in 0..<length {
-                    var returnState: ATNState = atn.states[(ctx!.getReturnState(i))]!
-
-
+                    var returnState: ATNState = atn.states[(ctx.getReturnState(i))]!
+                    
+                    
                     var removed: Bool = try calledRuleStack.get(returnState.ruleIndex!)
                     //TODO  try
                     //try {
                     try calledRuleStack.clear(returnState.ruleIndex!)
-                    try self._LOOK(returnState, stopState, ctx!.getParent(i), look, &lookBusy, calledRuleStack, seeThruPreds, addEOF)
+                    try self._LOOK(returnState, stopState, ctx.getParent(i), look, &lookBusy, calledRuleStack, seeThruPreds, addEOF)
                     //}
                     defer {
                         if removed {
@@ -226,7 +229,7 @@ public class LL1Analyzer {
         var n: Int = s.getNumberOfTransitions()
         for i in 0..<n {
             var t: Transition = s.transition(i)
-            if t.dynamicType === RuleTransition.self {
+            if type(of: t) === RuleTransition.self {
                 if try calledRuleStack.get((t as! RuleTransition).target.ruleIndex!) {
                     continue
                 }
@@ -252,7 +255,7 @@ public class LL1Analyzer {
                     if t.isEpsilon() {
                         try _LOOK(t.target, stopState, ctx, look, &lookBusy, calledRuleStack, seeThruPreds, addEOF)
                     } else {
-                        if t.dynamicType === WildcardTransition.self {
+                        if type(of: t) === WildcardTransition.self {
                             try look.addAll(IntervalSet.of(CommonToken.MIN_USER_TOKEN_TYPE, atn.maxTokenType))
                         } else {
 

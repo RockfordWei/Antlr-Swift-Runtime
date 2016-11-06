@@ -1,10 +1,4 @@
-//
-//  AppDelegate.swift
-//  Test
-//
-//  Created by janyou on 15/12/28.
-//  Copyright © 2015  jlabs. All rights reserved.
-//
+
 
 import Cocoa
 import Antlr4
@@ -12,46 +6,36 @@ import Antlr4
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet weak var window: NSWindow!
+ 
     
-    @IBAction func runHelloWalker(sender: AnyObject) {
+    @IBAction func runHelloWalker(_ sender: AnyObject) {
         do {
-            //            let text = Utils.readFile2String("TestHello.txt")
-            //            let chars :CharStream  =   ANTLRInputStream(text)
-            //            let lexer =   HelloLexer(chars)
+
+            let textFileName = "master_service.proto"
             
-            let textFileName = "TestHello.txt"
-            
-            if let textFilePath = NSBundle.mainBundle().pathForResource(textFileName, ofType: nil) {
-                let lexer =  HelloLexer(ANTLRFileStream(textFilePath))
+            if let textFilePath = Bundle.main.path(forResource: textFileName, ofType: nil) {
+                let lexer =  ProtoLexer(ANTLRFileStream(textFilePath))
                 let tokens =  CommonTokenStream(lexer)
-                let parser = try HelloParser(tokens)
+                let parser = try ProtoParser(tokens)
                 
-                let tree = try parser.r()
+                let tree = try parser.serviceName()
                 let walker = ParseTreeWalker()
                 try walker.walk(HelloWalker(),tree)
+                
             } else {
                 print("error occur: can not open \(textFileName)")
             }
             
-        }catch ANTLRException.CannotInvokeStartRule {
+        }catch ANTLRException.cannotInvokeStartRule {
             print("error occur: CannotInvokeStartRule")
-        }catch ANTLRException.Recognition(let e )   {
+        }catch ANTLRException.recognition(let e )   {
             print("error occur\(e)")
         }catch {
             print("error occur")
         }
     }
     
-    
-    func applicationDidFinishLaunching(aNotification: NSNotification){
-        // Insert code here to initialize your application
-        
-    }
-    
-    func applicationWillTerminate(aNotification: NSNotification) {
-        // Insert code here to tear down your application
-    }
-    
+
     
 }
 

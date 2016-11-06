@@ -7,11 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		831A66BF1DCFCE5E0022B4C2 /* master_service.proto in Resources */ = {isa = PBXBuildFile; fileRef = 831A66BE1DCFCE5E0022B4C2 /* master_service.proto */; };
+		831A66E41DCFE4620022B4C2 /* ProtoLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A66DA1DCFE4620022B4C2 /* ProtoLexer.swift */; };
+		831A66E51DCFE4620022B4C2 /* ProtoLexer.tokens in Resources */ = {isa = PBXBuildFile; fileRef = 831A66DB1DCFE4620022B4C2 /* ProtoLexer.tokens */; };
+		831A66E61DCFE4620022B4C2 /* ProtoLexerATN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A66DC1DCFE4620022B4C2 /* ProtoLexerATN.swift */; };
+		831A66E71DCFE4620022B4C2 /* ProtoParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A66DD1DCFE4620022B4C2 /* ProtoParser.swift */; };
+		831A66E81DCFE4620022B4C2 /* ProtoParser.tokens in Resources */ = {isa = PBXBuildFile; fileRef = 831A66DE1DCFE4620022B4C2 /* ProtoParser.tokens */; };
+		831A66E91DCFE4620022B4C2 /* ProtoParserBaseListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A66DF1DCFE4620022B4C2 /* ProtoParserBaseListener.swift */; };
+		831A66EA1DCFE4620022B4C2 /* ProtoParserBaseVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A66E01DCFE4620022B4C2 /* ProtoParserBaseVisitor.swift */; };
+		831A66EB1DCFE4620022B4C2 /* ProtoParserListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A66E11DCFE4620022B4C2 /* ProtoParserListener.swift */; };
+		831A66EC1DCFE4620022B4C2 /* ProtoParserParserATN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A66E21DCFE4620022B4C2 /* ProtoParserParserATN.swift */; };
+		831A66ED1DCFE4620022B4C2 /* ProtoParserVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A66E31DCFE4620022B4C2 /* ProtoParserVisitor.swift */; };
 		F90690081C318A5C00AC6125 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90690071C318A5C00AC6125 /* AppDelegate.swift */; };
 		F906900A1C318A5C00AC6125 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F90690091C318A5C00AC6125 /* Assets.xcassets */; };
 		F906900D1C318A5C00AC6125 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F906900B1C318A5C00AC6125 /* MainMenu.xib */; };
 		F906902A1C318A8600AC6125 /* HelloWalker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F906901F1C318A8600AC6125 /* HelloWalker.swift */; };
-		F906902C1C318B2000AC6125 /* TestHello.txt in Resources */ = {isa = PBXBuildFile; fileRef = F906902B1C318B2000AC6125 /* TestHello.txt */; };
 		F97C245E1CBC61C200FA0105 /* HelloBaseListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97C245D1CBC61C200FA0105 /* HelloBaseListener.swift */; };
 		F984B3591CB4AD88004C31FB /* HelloLexerATN.swift in Sources */ = {isa = PBXBuildFile; fileRef = F984B34F1CB4AD88004C31FB /* HelloLexerATN.swift */; };
 		F984B35A1CB4AD88004C31FB /* HelloParserATN.swift in Sources */ = {isa = PBXBuildFile; fileRef = F984B3501CB4AD88004C31FB /* HelloParserATN.swift */; };
@@ -25,13 +35,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		831A66BE1DCFCE5E0022B4C2 /* master_service.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = master_service.proto; sourceTree = "<group>"; };
+		831A66DA1DCFE4620022B4C2 /* ProtoLexer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtoLexer.swift; sourceTree = "<group>"; };
+		831A66DB1DCFE4620022B4C2 /* ProtoLexer.tokens */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ProtoLexer.tokens; sourceTree = "<group>"; };
+		831A66DC1DCFE4620022B4C2 /* ProtoLexerATN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtoLexerATN.swift; sourceTree = "<group>"; };
+		831A66DD1DCFE4620022B4C2 /* ProtoParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtoParser.swift; sourceTree = "<group>"; };
+		831A66DE1DCFE4620022B4C2 /* ProtoParser.tokens */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ProtoParser.tokens; sourceTree = "<group>"; };
+		831A66DF1DCFE4620022B4C2 /* ProtoParserBaseListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtoParserBaseListener.swift; sourceTree = "<group>"; };
+		831A66E01DCFE4620022B4C2 /* ProtoParserBaseVisitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtoParserBaseVisitor.swift; sourceTree = "<group>"; };
+		831A66E11DCFE4620022B4C2 /* ProtoParserListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtoParserListener.swift; sourceTree = "<group>"; };
+		831A66E21DCFE4620022B4C2 /* ProtoParserParserATN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtoParserParserATN.swift; sourceTree = "<group>"; };
+		831A66E31DCFE4620022B4C2 /* ProtoParserVisitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtoParserVisitor.swift; sourceTree = "<group>"; };
 		F90690041C318A5C00AC6125 /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F90690071C318A5C00AC6125 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F90690091C318A5C00AC6125 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F906900C1C318A5C00AC6125 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		F906900E1C318A5C00AC6125 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F906901F1C318A8600AC6125 /* HelloWalker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelloWalker.swift; sourceTree = "<group>"; };
-		F906902B1C318B2000AC6125 /* TestHello.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestHello.txt; sourceTree = "<group>"; };
 		F97C245D1CBC61C200FA0105 /* HelloBaseListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelloBaseListener.swift; sourceTree = "<group>"; };
 		F984B34F1CB4AD88004C31FB /* HelloLexerATN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelloLexerATN.swift; sourceTree = "<group>"; };
 		F984B3501CB4AD88004C31FB /* HelloParserATN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelloParserATN.swift; sourceTree = "<group>"; };
@@ -55,6 +75,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		831A66D91DCFE4620022B4C2 /* Proto */ = {
+			isa = PBXGroup;
+			children = (
+				831A66DA1DCFE4620022B4C2 /* ProtoLexer.swift */,
+				831A66DB1DCFE4620022B4C2 /* ProtoLexer.tokens */,
+				831A66DC1DCFE4620022B4C2 /* ProtoLexerATN.swift */,
+				831A66DD1DCFE4620022B4C2 /* ProtoParser.swift */,
+				831A66DE1DCFE4620022B4C2 /* ProtoParser.tokens */,
+				831A66DF1DCFE4620022B4C2 /* ProtoParserBaseListener.swift */,
+				831A66E01DCFE4620022B4C2 /* ProtoParserBaseVisitor.swift */,
+				831A66E11DCFE4620022B4C2 /* ProtoParserListener.swift */,
+				831A66E21DCFE4620022B4C2 /* ProtoParserParserATN.swift */,
+				831A66E31DCFE4620022B4C2 /* ProtoParserVisitor.swift */,
+			);
+			path = Proto;
+			sourceTree = "<group>";
+		};
 		F9068FFB1C318A5C00AC6125 = {
 			isa = PBXGroup;
 			children = (
@@ -74,8 +111,9 @@
 		F90690061C318A5C00AC6125 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				831A66D91DCFE4620022B4C2 /* Proto */,
+				831A66BE1DCFCE5E0022B4C2 /* master_service.proto */,
 				F90690141C318A8600AC6125 /* Hello */,
-				F906902B1C318B2000AC6125 /* TestHello.txt */,
 				F906901F1C318A8600AC6125 /* HelloWalker.swift */,
 				F90690071C318A5C00AC6125 /* AppDelegate.swift */,
 				F90690091C318A5C00AC6125 /* Assets.xcassets */,
@@ -129,11 +167,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = jlabs;
 				TargetAttributes = {
 					F90690031C318A5C00AC6125 = {
 						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -160,9 +199,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F906902C1C318B2000AC6125 /* TestHello.txt in Resources */,
+				831A66E51DCFE4620022B4C2 /* ProtoLexer.tokens in Resources */,
 				F906900A1C318A5C00AC6125 /* Assets.xcassets in Resources */,
+				831A66BF1DCFCE5E0022B4C2 /* master_service.proto in Resources */,
 				F984B35B1CB4AD88004C31FB /* Hello.tokens in Resources */,
+				831A66E81DCFE4620022B4C2 /* ProtoParser.tokens in Resources */,
 				F984B35F1CB4AD88004C31FB /* HelloLexer.tokens in Resources */,
 				F906900D1C318A5C00AC6125 /* MainMenu.xib in Resources */,
 			);
@@ -178,11 +219,19 @@
 				F984B3601CB4AD88004C31FB /* HelloListener.swift in Sources */,
 				F984B35E1CB4AD88004C31FB /* HelloLexer.swift in Sources */,
 				F90690081C318A5C00AC6125 /* AppDelegate.swift in Sources */,
+				831A66EC1DCFE4620022B4C2 /* ProtoParserParserATN.swift in Sources */,
+				831A66ED1DCFE4620022B4C2 /* ProtoParserVisitor.swift in Sources */,
 				F984B3611CB4AD88004C31FB /* HelloParser.swift in Sources */,
+				831A66EA1DCFE4620022B4C2 /* ProtoParserBaseVisitor.swift in Sources */,
 				F906902A1C318A8600AC6125 /* HelloWalker.swift in Sources */,
+				831A66E61DCFE4620022B4C2 /* ProtoLexerATN.swift in Sources */,
 				F984B35D1CB4AD88004C31FB /* HelloBaseVisitor.swift in Sources */,
 				F984B3591CB4AD88004C31FB /* HelloLexerATN.swift in Sources */,
 				F97C245E1CBC61C200FA0105 /* HelloBaseListener.swift in Sources */,
+				831A66E41DCFE4620022B4C2 /* ProtoLexer.swift in Sources */,
+				831A66EB1DCFE4620022B4C2 /* ProtoParserListener.swift in Sources */,
+				831A66E91DCFE4620022B4C2 /* ProtoParserBaseListener.swift in Sources */,
+				831A66E71DCFE4620022B4C2 /* ProtoParser.swift in Sources */,
 				F984B35A1CB4AD88004C31FB /* HelloParserATN.swift in Sources */,
 				F984B3621CB4AD88004C31FB /* HelloVisitor.swift in Sources */,
 			);
@@ -237,7 +286,8 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -275,7 +325,8 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
@@ -287,10 +338,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
 				INFOPLIST_FILE = Test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jlabs.Test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -299,10 +353,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
 				INFOPLIST_FILE = Test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jlabs.Test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

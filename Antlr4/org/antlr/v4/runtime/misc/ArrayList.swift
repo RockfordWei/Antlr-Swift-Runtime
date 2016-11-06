@@ -3,12 +3,12 @@
 //  Antlr4
 //
 //  Created by janyou on 16/2/24.
-//  Copyright © 2016年 jlabs. All rights reserved.
+//  Copyright © 2016 jlabs. All rights reserved.
 //
 
 import Foundation
 
-public final class ArrayList<T>: ArrayLiteralConvertible  {
+public final class ArrayList<T>: ExpressibleByArrayLiteral  {
     private var array: Array<T>
     public init(slice: ArraySlice<T>) {
         array = Array<T>()
@@ -24,7 +24,7 @@ public final class ArrayList<T>: ArrayLiteralConvertible  {
     
     }
     public init(count: Int, repeatedValue: T) {
-        array =  Array<T>(count: count, repeatedValue: repeatedValue)
+        array =  Array<T>( repeating: repeatedValue, count: count)
     }
     
     public init(arrayLiteral elements: T...) {

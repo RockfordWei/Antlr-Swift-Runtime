@@ -47,12 +47,12 @@
 
 public class LexerActionExecutor: Hashable {
 
-    private final var lexerActions: [LexerAction]
+    fileprivate final var lexerActions: [LexerAction]
     /**
      * Caches the result of {@link #hashCode} since the hash code is an element
      * of the performance-critical {@link org.antlr.v4.runtime.atn.LexerATNConfig#hashCode} operation.
      */
-    private final var hashCode: Int
+    fileprivate final var hashCode: Int
 
     /**
      * Constructs an executor for a sequence of {@link org.antlr.v4.runtime.atn.LexerAction} actions.
@@ -84,7 +84,7 @@ public class LexerActionExecutor: Hashable {
      * @return A {@link org.antlr.v4.runtime.atn.LexerActionExecutor} for executing the combine actions
      * of {@code lexerActionExecutor} and {@code lexerAction}.
      */
-    public static func append(lexerActionExecutor: LexerActionExecutor?, _ lexerAction: LexerAction) -> LexerActionExecutor {
+    public static func append(_ lexerActionExecutor: LexerActionExecutor?, _ lexerAction: LexerAction) -> LexerActionExecutor {
         if lexerActionExecutor == nil {
             return LexerActionExecutor([lexerAction])
         }
@@ -125,7 +125,7 @@ public class LexerActionExecutor: Hashable {
      * @return A {@link org.antlr.v4.runtime.atn.LexerActionExecutor} which stores input stream offsets
      * for all position-dependent lexer actions.
      */
-    public func fixOffsetBeforeMatch(offset: Int) -> LexerActionExecutor {
+    public func fixOffsetBeforeMatch(_ offset: Int) -> LexerActionExecutor {
         var updatedLexerActions: [LexerAction]? = nil
         let length = lexerActions.count
         for i in 0..<length {
@@ -172,16 +172,20 @@ public class LexerActionExecutor: Hashable {
      * {@link org.antlr.v4.runtime.IntStream#seek} to set the {@code input} position to the beginning
      * of the token.
      */
-    public func execute(lexer: Lexer, _ input: CharStream, _ startIndex: Int) throws {
+    public func execute(_ lexer: Lexer, _ input: CharStream, _ startIndex: Int) throws {
         var requiresSeek: Bool = false
         var stopIndex: Int = input.index()
+        defer {
+            if requiresSeek {
+                try! input.seek(stopIndex)
+            }
+        }
         //try {
         for var lexerAction: LexerAction in self.lexerActions {
-            var runLexerAction: LexerAction
-            if lexerAction is LexerIndexedCustomAction {
-                var offset: Int = (lexerAction as! LexerIndexedCustomAction).getOffset()
+            if let runLexerAction = lexerAction as? LexerIndexedCustomAction {
+                let offset: Int = runLexerAction.getOffset()
                 try input.seek(startIndex + offset)
-                lexerAction = (lexerAction as! LexerIndexedCustomAction).getAction()
+                lexerAction = runLexerAction.getAction()
                 requiresSeek = (startIndex + offset) != stopIndex
             } else {
                 if lexerAction.isPositionDependent() {
@@ -193,11 +197,7 @@ public class LexerActionExecutor: Hashable {
             try lexerAction.execute(lexer)
         }
         //}
-        defer {
-            if requiresSeek {
-                try! input.seek(stopIndex)
-            }
-        }
+
     }
 
 

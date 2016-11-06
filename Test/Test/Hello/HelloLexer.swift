@@ -1,7 +1,7 @@
 // Generated from Hello.g4 by ANTLR 4.5.1
 import Antlr4
 
-public class HelloLexer: Lexer {
+open class HelloLexer: Lexer {
 	internal static var _decisionToDFA: [DFA] = {
           var decisionToDFA = [DFA]()
           let length = HelloLexer._ATN.getNumberOfDecisions()
@@ -35,7 +35,7 @@ public class HelloLexer: Lexer {
 	//@Deprecated
 	public let tokenNames: [String?]? = {
 	    let length = _SYMBOLIC_NAMES.count
-	    var tokenNames = [String?](count: length, repeatedValue: nil)
+	    var tokenNames = [String?](repeating: nil, count: length)
 		for i in 0..<length {
 			var name = VOCABULARY.getLiteralName(i)
 			if name == nil {
@@ -50,11 +50,11 @@ public class HelloLexer: Lexer {
 	}()
 
 	override
-	public func getTokenNames() -> [String?]? {
+	open func getTokenNames() -> [String?]? {
 		return tokenNames
 	}
 
-    public override func getVocabulary() -> Vocabulary {
+    open override func getVocabulary() -> Vocabulary {
         return HelloLexer.VOCABULARY
     }
 
@@ -65,19 +65,19 @@ public class HelloLexer: Lexer {
 	}
 
 	override
-	public func getGrammarFileName() -> String { return "Hello.g4" }
+	open func getGrammarFileName() -> String { return "Hello.g4" }
 
     override
-	public func getRuleNames() -> [String] { return HelloLexer.ruleNames }
+	open func getRuleNames() -> [String] { return HelloLexer.ruleNames }
 
 	override
-	public func getSerializedATN() -> String { return HelloLexer._serializedATN }
+	open func getSerializedATN() -> String { return HelloLexer._serializedATN }
 
 	override
-	public func getModeNames() -> [String] { return HelloLexer.modeNames }
+	open func getModeNames() -> [String] { return HelloLexer.modeNames }
 
 	override
-	public func getATN() -> ATN { return HelloLexer._ATN }
+	open func getATN() -> ATN { return HelloLexer._ATN }
 
     public static let _serializedATN: String = HelloLexerATN().jsonString
 	public static let _ATN: ATN = ATNDeserializer().deserializeFromJson(_serializedATN)
