@@ -115,7 +115,7 @@ public func == <Element : Equatable>(
         }
         
         // Test referential equality.
-        if lhsCount == 0 || lhs._buffer.identity == rhs._buffer.identity {
+        if lhsCount == 0 { // || lhs._buffer.identity == rhs._buffer.identity
             return true
         }
         

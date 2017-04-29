@@ -11,17 +11,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func runHelloWalker(_ sender: AnyObject) {
         do {
 
-            let textFileName = "master_service.proto"
+            // if you get can not open / drag file to copy to bundle resources in build phases
+            let textFileName = "Test.java"
             
             if let textFilePath = Bundle.main.path(forResource: textFileName, ofType: nil) {
-                let lexer =  ProtoLexer(ANTLRFileStream(textFilePath))
-                //print("lexer:",lexer.getATN())
+                let lexer =  Java8Lexer(ANTLRFileStream(textFilePath))
+                print("lexer:",lexer)
                 let tokens =  CommonTokenStream(lexer)
-                let parser = try ProtoParser(tokens)
-                //print("parser:",parser.getATN())
-                let tree = try parser.proto()
+                let parser = try Java8Parser(tokens)
+               
+                let tree = try parser.compilationUnit()
+                print("tree:",tree)
+                
                 let walker = ParseTreeWalker()
-                try walker.walk(ProtoWalker(),tree)
+                let java8walker = Java8Walker()
+                try walker.walk(java8walker,tree)
                 
             } else {
                 print("error occur: can not open \(textFileName)")
