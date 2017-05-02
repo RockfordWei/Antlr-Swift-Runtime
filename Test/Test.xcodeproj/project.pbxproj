@@ -36,6 +36,18 @@
 		8340D4471EB518380046BAF4 /* ProtoParser.g4 in Resources */ = {isa = PBXBuildFile; fileRef = 8340D4451EB518380046BAF4 /* ProtoParser.g4 */; };
 		8340D4481EB519970046BAF4 /* Test.java in Resources */ = {isa = PBXBuildFile; fileRef = 8340D43A1EB512680046BAF4 /* Test.java */; };
 		8340D4491EB5199C0046BAF4 /* J2SwiftListener.java in Resources */ = {isa = PBXBuildFile; fileRef = 8340D4401EB5160B0046BAF4 /* J2SwiftListener.java */; };
+		8340E9191EB824210046BAF4 /* Golang.tokens in Resources */ = {isa = PBXBuildFile; fileRef = 8340E90F1EB824210046BAF4 /* Golang.tokens */; };
+		8340E91A1EB824210046BAF4 /* GolangBaseListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340E9101EB824210046BAF4 /* GolangBaseListener.swift */; };
+		8340E91B1EB824210046BAF4 /* GolangBaseVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340E9111EB824210046BAF4 /* GolangBaseVisitor.swift */; };
+		8340E91C1EB824210046BAF4 /* GolangLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340E9121EB824210046BAF4 /* GolangLexer.swift */; };
+		8340E91D1EB824210046BAF4 /* GolangLexer.tokens in Resources */ = {isa = PBXBuildFile; fileRef = 8340E9131EB824210046BAF4 /* GolangLexer.tokens */; };
+		8340E91E1EB824210046BAF4 /* GolangLexerATN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340E9141EB824210046BAF4 /* GolangLexerATN.swift */; };
+		8340E91F1EB824210046BAF4 /* GolangListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340E9151EB824210046BAF4 /* GolangListener.swift */; };
+		8340E9201EB824210046BAF4 /* GolangParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340E9161EB824210046BAF4 /* GolangParser.swift */; };
+		8340E9211EB824210046BAF4 /* GolangParserATN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340E9171EB824210046BAF4 /* GolangParserATN.swift */; };
+		8340E9221EB824210046BAF4 /* GolangVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340E9181EB824210046BAF4 /* GolangVisitor.swift */; };
+		8340E9241EB8248D0046BAF4 /* GolangWalker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340E9231EB8248D0046BAF4 /* GolangWalker.swift */; };
+		8340E9261EB825050046BAF4 /* session.go in Resources */ = {isa = PBXBuildFile; fileRef = 8340E9251EB825050046BAF4 /* session.go */; };
 		F90690081C318A5C00AC6125 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90690071C318A5C00AC6125 /* AppDelegate.swift */; };
 		F906900A1C318A5C00AC6125 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F90690091C318A5C00AC6125 /* Assets.xcassets */; };
 		F906900D1C318A5C00AC6125 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F906900B1C318A5C00AC6125 /* MainMenu.xib */; };
@@ -82,6 +94,18 @@
 		8340D4421EB516150046BAF4 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		8340D4441EB518380046BAF4 /* ProtoLexer.g4 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ProtoLexer.g4; sourceTree = "<group>"; };
 		8340D4451EB518380046BAF4 /* ProtoParser.g4 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ProtoParser.g4; sourceTree = "<group>"; };
+		8340E90F1EB824210046BAF4 /* Golang.tokens */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Golang.tokens; sourceTree = "<group>"; };
+		8340E9101EB824210046BAF4 /* GolangBaseListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GolangBaseListener.swift; sourceTree = "<group>"; };
+		8340E9111EB824210046BAF4 /* GolangBaseVisitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GolangBaseVisitor.swift; sourceTree = "<group>"; };
+		8340E9121EB824210046BAF4 /* GolangLexer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GolangLexer.swift; sourceTree = "<group>"; };
+		8340E9131EB824210046BAF4 /* GolangLexer.tokens */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GolangLexer.tokens; sourceTree = "<group>"; };
+		8340E9141EB824210046BAF4 /* GolangLexerATN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GolangLexerATN.swift; sourceTree = "<group>"; };
+		8340E9151EB824210046BAF4 /* GolangListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GolangListener.swift; sourceTree = "<group>"; };
+		8340E9161EB824210046BAF4 /* GolangParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GolangParser.swift; sourceTree = "<group>"; };
+		8340E9171EB824210046BAF4 /* GolangParserATN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GolangParserATN.swift; sourceTree = "<group>"; };
+		8340E9181EB824210046BAF4 /* GolangVisitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GolangVisitor.swift; sourceTree = "<group>"; };
+		8340E9231EB8248D0046BAF4 /* GolangWalker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GolangWalker.swift; sourceTree = "<group>"; };
+		8340E9251EB825050046BAF4 /* session.go */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = session.go; sourceTree = "<group>"; };
 		F90690041C318A5C00AC6125 /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F90690071C318A5C00AC6125 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F90690091C318A5C00AC6125 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -157,6 +181,23 @@
 			path = java8;
 			sourceTree = "<group>";
 		};
+		8340E90E1EB824210046BAF4 /* Golang */ = {
+			isa = PBXGroup;
+			children = (
+				8340E90F1EB824210046BAF4 /* Golang.tokens */,
+				8340E9101EB824210046BAF4 /* GolangBaseListener.swift */,
+				8340E9111EB824210046BAF4 /* GolangBaseVisitor.swift */,
+				8340E9121EB824210046BAF4 /* GolangLexer.swift */,
+				8340E9131EB824210046BAF4 /* GolangLexer.tokens */,
+				8340E9141EB824210046BAF4 /* GolangLexerATN.swift */,
+				8340E9151EB824210046BAF4 /* GolangListener.swift */,
+				8340E9161EB824210046BAF4 /* GolangParser.swift */,
+				8340E9171EB824210046BAF4 /* GolangParserATN.swift */,
+				8340E9181EB824210046BAF4 /* GolangVisitor.swift */,
+			);
+			path = Golang;
+			sourceTree = "<group>";
+		};
 		F9068FFB1C318A5C00AC6125 = {
 			isa = PBXGroup;
 			children = (
@@ -177,14 +218,17 @@
 		F90690061C318A5C00AC6125 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				8340E90E1EB824210046BAF4 /* Golang */,
 				8340D4421EB516150046BAF4 /* Readme.md */,
 				8340D4401EB5160B0046BAF4 /* J2SwiftListener.java */,
+				8340E9251EB825050046BAF4 /* session.go */,
 				8340D43A1EB512680046BAF4 /* Test.java */,
 				8340D4251EB50B6F0046BAF4 /* java8 */,
 				831A66D91DCFE4620022B4C2 /* Proto */,
 				831A66BE1DCFCE5E0022B4C2 /* master_service.proto */,
 				F90690141C318A8600AC6125 /* Hello */,
 				F906901F1C318A8600AC6125 /* Java8Walker.swift */,
+				8340E9231EB8248D0046BAF4 /* GolangWalker.swift */,
 				8340D43E1EB513F20046BAF4 /* ProtoWalker.swift */,
 				F90690071C318A5C00AC6125 /* AppDelegate.swift */,
 				F90690091C318A5C00AC6125 /* Assets.xcassets */,
@@ -272,6 +316,8 @@
 			files = (
 				8340D4301EB50B6F0046BAF4 /* Java8.tokens in Resources */,
 				831A66E51DCFE4620022B4C2 /* ProtoLexer.tokens in Resources */,
+				8340E9261EB825050046BAF4 /* session.go in Resources */,
+				8340E9191EB824210046BAF4 /* Golang.tokens in Resources */,
 				F906900A1C318A5C00AC6125 /* Assets.xcassets in Resources */,
 				831A66BF1DCFCE5E0022B4C2 /* master_service.proto in Resources */,
 				8340D4471EB518380046BAF4 /* ProtoParser.g4 in Resources */,
@@ -281,6 +327,7 @@
 				F984B35F1CB4AD88004C31FB /* HelloLexer.tokens in Resources */,
 				8340D4341EB50B6F0046BAF4 /* Java8Lexer.tokens in Resources */,
 				F906900D1C318A5C00AC6125 /* MainMenu.xib in Resources */,
+				8340E91D1EB824210046BAF4 /* GolangLexer.tokens in Resources */,
 				8340D4491EB5199C0046BAF4 /* J2SwiftListener.java in Resources */,
 				8340D4481EB519970046BAF4 /* Test.java in Resources */,
 				8340D43D1EB513000046BAF4 /* Java8.g4 in Resources */,
@@ -301,15 +348,23 @@
 				8340D4381EB50B6F0046BAF4 /* Java8ParserATN.swift in Sources */,
 				831A66EC1DCFE4620022B4C2 /* ProtoParserParserATN.swift in Sources */,
 				8340D4331EB50B6F0046BAF4 /* Java8Lexer.swift in Sources */,
+				8340E91B1EB824210046BAF4 /* GolangBaseVisitor.swift in Sources */,
 				831A66ED1DCFE4620022B4C2 /* ProtoParserVisitor.swift in Sources */,
 				F984B3611CB4AD88004C31FB /* HelloParser.swift in Sources */,
+				8340E9241EB8248D0046BAF4 /* GolangWalker.swift in Sources */,
+				8340E91E1EB824210046BAF4 /* GolangLexerATN.swift in Sources */,
+				8340E91F1EB824210046BAF4 /* GolangListener.swift in Sources */,
 				8340D4321EB50B6F0046BAF4 /* Java8BaseVisitor.swift in Sources */,
 				8340D4311EB50B6F0046BAF4 /* Java8BaseListener.swift in Sources */,
 				831A66EA1DCFE4620022B4C2 /* ProtoParserBaseVisitor.swift in Sources */,
 				F906902A1C318A8600AC6125 /* Java8Walker.swift in Sources */,
+				8340E9201EB824210046BAF4 /* GolangParser.swift in Sources */,
 				8340D4361EB50B6F0046BAF4 /* Java8Listener.swift in Sources */,
 				831A66E61DCFE4620022B4C2 /* ProtoLexerATN.swift in Sources */,
+				8340E91A1EB824210046BAF4 /* GolangBaseListener.swift in Sources */,
+				8340E9211EB824210046BAF4 /* GolangParserATN.swift in Sources */,
 				8340D43F1EB513F20046BAF4 /* ProtoWalker.swift in Sources */,
+				8340E91C1EB824210046BAF4 /* GolangLexer.swift in Sources */,
 				F984B35D1CB4AD88004C31FB /* HelloBaseVisitor.swift in Sources */,
 				F984B3591CB4AD88004C31FB /* HelloLexerATN.swift in Sources */,
 				F97C245E1CBC61C200FA0105 /* HelloBaseListener.swift in Sources */,
@@ -317,6 +372,7 @@
 				831A66E41DCFE4620022B4C2 /* ProtoLexer.swift in Sources */,
 				831A66EB1DCFE4620022B4C2 /* ProtoParserListener.swift in Sources */,
 				8340D4371EB50B6F0046BAF4 /* Java8Parser.swift in Sources */,
+				8340E9221EB824210046BAF4 /* GolangVisitor.swift in Sources */,
 				831A66E91DCFE4620022B4C2 /* ProtoParserBaseListener.swift in Sources */,
 				831A66E71DCFE4620022B4C2 /* ProtoParser.swift in Sources */,
 				F984B35A1CB4AD88004C31FB /* HelloParserATN.swift in Sources */,
