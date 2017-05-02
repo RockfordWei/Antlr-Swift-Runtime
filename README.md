@@ -1,15 +1,30 @@
 
 # ANTLR v4.5.1 Swift Runtime
-Upgrage to support Xcode 8
 
-(v4.5.1.4 for Xcode 7.3.1)
 
-(v4.5.1.2 for Xcode 7.2.1)
+Walk the AST of any file. grab respective tokens / lexers for ALL languages here    
+https://github.com/johndpope/ANTLR-Swift-Target    
+Java file parser / tokenizer in swift     
 
-#### Main change
-Serialize ATN to json string.  
- 
-you can see `Test` project example(open AntlrSwift.xcworkspace)  
 
-#### [Run Runtime Testsuite](https://github.com/janyou/ANTLR-Swift-Target/blob/master/RuntimeTestsuite.md)
+            let textFileName = "Test.java"
+            
+            if let textFilePath = Bundle.main.path(forResource: textFileName, ofType: nil) {
+                let lexer =  Java8Lexer(ANTLRFileStream(textFilePath))
+                print("lexer:",lexer)
+                let tokens =  CommonTokenStream(lexer)
+                let parser = try Java8Parser(tokens)
+               
+                let tree = try parser.compilationUnit()
+                print("tree:",tree)
+                
+                let walker = ParseTreeWalker()
+                let java8walker = Java8Walker()
+                try walker.walk(java8walker,tree)
+                
+            } else {
+                print("error occur: can not open \(textFileName)")
+            }
+
+
 
