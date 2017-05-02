@@ -46,13 +46,14 @@ else
 fi
 
 
+sudo curl -O http://www.antlr.org/download/antlr-4.7-complete.jar
 
 for file_path in $(find ./grammars-v4 -type f -name "*.g4" ); do
   #DIR=$(dirname $file_path)
   file=$(basename $file_path)
   printf "\033c"
-  echo "🚀 java -cp antlr4-4.5.1.jar  org.antlr.v4.Tool -Dlanguage=Swift -visitor -o gen $file_path"
-  java -cp antlr4-4.5.1.jar  org.antlr.v4.Tool -Dlanguage=Swift -visitor -o gen $file_path
+  echo "🚀 java -cp antlr-4.7-complete.jar  org.antlr.v4.Tool -Dlanguage=Swift -visitor -o gen $file_path"
+  java -cp antlr-4.7-complete.jar  org.antlr.v4.Tool -Dlanguage=Swift -visitor -o gen $file_path
 done
 
 
